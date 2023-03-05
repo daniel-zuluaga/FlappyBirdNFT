@@ -15,7 +15,7 @@ public class WebGLTransfer20 : MonoBehaviour
     [SerializeField]
     private string toAccount = "0x0978d44967c83E72cEEEa7ed2D021853EC29bc80";
     [SerializeField]
-    private string amount = "1000";
+    private string amount = "100000000000000000000";
 
     private readonly string abi = ABI.ERC_20;
 

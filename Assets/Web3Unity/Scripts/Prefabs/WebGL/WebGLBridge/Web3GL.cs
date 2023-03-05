@@ -88,7 +88,7 @@ public class Web3GL
         var response = SendContractResponse();
         while (response == "")
         {
-            await new WaitForSeconds(1f);
+            await new WaitForSeconds(.5f);
             response = SendContractResponse();
         }
 
