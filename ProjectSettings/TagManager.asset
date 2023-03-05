@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: BG
     uniqueID: 3844443069
+    locked: 0
+  - name: Tubos
+    uniqueID: 2207486313
     locked: 0
   - name: Default
     uniqueID: 0
