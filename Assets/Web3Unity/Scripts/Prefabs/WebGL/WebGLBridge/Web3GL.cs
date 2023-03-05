@@ -5,7 +5,6 @@ using GameData;
 using UnityEngine;
 using Web3Unity.Scripts.Library.ETHEREUEM.WebGL;
 
-#if UNITY_WEBGL
 public class Web3GL
 {
     [DllImport("__Internal")]
@@ -229,4 +228,3 @@ public class Web3GL
         return GetNetwork();
     }
 }
-#endif
