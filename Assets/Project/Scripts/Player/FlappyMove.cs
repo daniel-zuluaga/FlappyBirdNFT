@@ -2,21 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using Newtonsoft.Json;
+using System;
 
 public class FlappyMove : MonoBehaviour
 {
+    public static FlappyMove instanceFlappyBird;
+
     public float jumpForce;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public GameOver gameOver;
     public AudioSource audioSource;
+    public SpriteRenderer meshRenderer;
+    //public Texture textureFlappy;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-
+        instanceFlappyBird = this;
     }
+
+    //void Start()
+    //{
+    //    VerificationImage();
+    //}
+
+    //public void VerificationImage()
+    //{
+    //    ERC1155URIExample.instanceERC1155URIExample.CheckUriImage();
+    //}
 
     private void Update()
     {
