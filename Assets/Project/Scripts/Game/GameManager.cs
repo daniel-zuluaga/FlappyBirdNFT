@@ -7,12 +7,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    public FlappyMove flappyMove;
+    public AudioClip audioJumpFlappy;
 
     static public GameManager instanceGameManager;
 
     private void Awake()
     {
         instanceGameManager = this;
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Game");
+        Time.timeScale = 1;
     }
 
     private void Start()
@@ -22,20 +30,22 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void ReturnGame()
+    public void ReturnGame(string nameScene)
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(nameScene);
         Time.timeScale = 1;
     }
 
     public void PauseGame()
     {
+        flappyMove.audioSource.clip = null;
         pauseCanvas.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void UnPause()
     {
+        flappyMove.audioSource.clip = audioJumpFlappy;
         pauseCanvas.SetActive(false);
         Time.timeScale = 1;
     }

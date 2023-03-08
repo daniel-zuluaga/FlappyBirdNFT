@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Game.unity
     guid: 83b273e00dcbc4e6ea55fd37fa703662
+  - enabled: 1
+    path: Assets/Project/Scenes/GameOpenSea.unity
+    guid: 18408fbbc3714472abd9d79ca018d836
+  - enabled: 1
+    path: Assets/Project/Scenes/GameRefinable.unity
+    guid: 85849ce83416440769187c205bb5900c
   m_configObjects: {}
