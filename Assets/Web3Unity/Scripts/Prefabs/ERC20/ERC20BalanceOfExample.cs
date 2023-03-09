@@ -2,6 +2,7 @@ using System.Numerics;
 using UnityEngine;
 using Web3Unity.Scripts.Library.ETHEREUEM.EIP;
 
+#if UNITY_WEBGL
 public class ERC20BalanceOfExample : MonoBehaviour
 {
     async public void BalanceOf()
@@ -13,3 +14,4 @@ public class ERC20BalanceOfExample : MonoBehaviour
         Debug.Log("Balance Of: " + balanceOf);
     }
 }
+#endif

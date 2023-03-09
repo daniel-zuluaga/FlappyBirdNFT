@@ -25,9 +25,10 @@ public class ERC1155BalanceOfExample : MonoBehaviour
             notNFTText.text = "";
             SceneManager.LoadScene("GameOpenSea");
         }
-        else if(balanceOf <= 0)
+        else if(balanceOf == 0)
         {
             notNFTText.text = "No hay NFT en esta cuenta";
+            flappyGreen.SetActive(false);
         }
     }
 }

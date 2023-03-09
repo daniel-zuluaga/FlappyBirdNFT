@@ -8,9 +8,13 @@ using Web3Unity.Scripts.Library.Web3Wallet;
 
 public class WalletLogin : MonoBehaviour
 {
-    public Toggle rememberMe;
     ProjectConfigScriptableObject projectConfigSO = null;
     private void Start()
+    {
+        InitialStartAccount();
+    }
+
+    public void InitialStartAccount()
     {
         // loads the data saved from the editor config
         projectConfigSO = (ProjectConfigScriptableObject)Resources.Load("ProjectConfigData", typeof(ScriptableObject));
@@ -20,11 +24,11 @@ public class WalletLogin : MonoBehaviour
         PlayerPrefs.SetString("Network", projectConfigSO.Network);
         PlayerPrefs.SetString("RPC", projectConfigSO.RPC);
         // if remember me is checked, set the account to the saved account
-        if (PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
-            if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != "")
-                // move to next scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (PlayerPrefs.GetString("Account") != "")
+            // move to next scene
+            SceneManager.LoadScene("Main");
     }
+
     public async void OnLogin()
     {
         // get current timestamp
@@ -43,13 +47,7 @@ public class WalletLogin : MonoBehaviour
         {
             // save account
             PlayerPrefs.SetString("Account", account);
-            if (rememberMe.isOn)
-                PlayerPrefs.SetInt("RememberMe", 1);
-            else
-                PlayerPrefs.SetInt("RememberMe", 0);
-            print("Account: " + account);
-            // load next scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Main");
         }
     }
     public string SignVerifySignature(string signatureString, string originalMessage)

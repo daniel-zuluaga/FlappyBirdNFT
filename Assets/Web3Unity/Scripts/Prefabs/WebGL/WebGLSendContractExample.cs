@@ -6,6 +6,7 @@ using UnityEngine.Windows;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+#if UNITY_WEBGL
 public class WebGLSendContractExample : MonoBehaviour
 {
     public TextMeshProUGUI confirmation;
@@ -47,3 +48,4 @@ public class WebGLSendContractExample : MonoBehaviour
         }
     }
 }
+#endif

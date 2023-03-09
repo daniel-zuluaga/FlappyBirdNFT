@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+#if UNITY_WEBGL
 public class WebGLSendTransactionExample : MonoBehaviour
 {
     public TextMeshProUGUI hash;
@@ -42,3 +43,4 @@ public class WebGLSendTransactionExample : MonoBehaviour
         }
     }
 }
+#endif

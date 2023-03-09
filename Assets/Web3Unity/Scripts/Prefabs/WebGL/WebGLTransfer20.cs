@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Web3Unity.Scripts.Library.ETHEREUEM.EIP;
 using Web3Unity.Scripts.Prefabs;
 
+#if UNITY_WEBGL
 public class WebGLTransfer20 : MonoBehaviour
 {
     [SerializeField]
@@ -81,3 +82,4 @@ public class WebGLTransfer20 : MonoBehaviour
         }
     }
 }
+#endif
