@@ -4,10 +4,10 @@ using Web3Unity.Scripts.Library.ETHEREUEM.EIP;
 
 public class ERC20BalanceOfExample : MonoBehaviour
 {
-    async void Start()
+    async public void BalanceOf()
     {
-        string contract = "0x3E0C0447e47d49195fbE329265E330643eB42e6f";
-        string account = "0xd25b827D92b0fd656A1c829933e9b0b836d5C3e2";
+        string contract = "0x703c57f7823f4e369a702db901d9efe2da4fcf9d";
+        string account = "0x0978d44967c83E72cEEEa7ed2D021853EC29bc80";
 
         BigInteger balanceOf = await ERC20.BalanceOf(contract, account);
         Debug.Log("Balance Of: " + balanceOf);
