@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/GameRefinable.unity
     guid: 85849ce83416440769187c205bb5900c
+  - enabled: 1
+    path: Assets/Project/Scenes/LoadWinTransaction.unity
+    guid: 7511871fdd6c54839be3ef9ed54cfb6a
+  - enabled: 1
+    path: Assets/Project/Scenes/Win.unity
+    guid: 629a21d054f7e402abb1f48111c66450
   m_configObjects: {}

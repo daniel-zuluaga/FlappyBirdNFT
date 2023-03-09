@@ -9,12 +9,20 @@ public class GameManager : MonoBehaviour
     public GameObject pauseCanvas;
     public FlappyMove flappyMove;
     public AudioClip audioJumpFlappy;
+    public GameObject WinLoadScene;
 
-    static public GameManager instanceGameManager;
+    public static GameManager instanceGameManager;
 
     private void Awake()
     {
         instanceGameManager = this;
+    }
+
+    private void Start()
+    {
+        pauseCanvas.SetActive(false);
+        WinLoadScene.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void PlayGame()
@@ -23,9 +31,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void Start()
+    public void LoadSceneTransaction()
     {
-        pauseCanvas.SetActive(false);
+        SceneManager.LoadScene("LoadWinTransaction");
         Time.timeScale = 1;
     }
 

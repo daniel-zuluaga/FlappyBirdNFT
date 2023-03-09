@@ -5,6 +5,8 @@ using UnityEngine;
 public class MoveTubo : MonoBehaviour
 {
     public float speed;
+    public float points;
+    public AudioSource WinPoint;
 
     void FixedUpdate()
     {
@@ -18,5 +20,12 @@ public class MoveTubo : MonoBehaviour
     public void Move()
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        WinPoints.instancePoints.PlusPoints(points);
+        WinPoint.playOnAwake = false;
+        WinPoint.Play();
     }
 }
