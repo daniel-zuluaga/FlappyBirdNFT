@@ -15,7 +15,6 @@ public class FlappyMove : MonoBehaviour
     public GameOver gameOver;
     public AudioSource audioSource;
     public SpriteRenderer meshRenderer;
-    //public Texture textureFlappy;
 
     private void Awake()
     {
@@ -51,6 +50,12 @@ public class FlappyMove : MonoBehaviour
         if (collision.collider.CompareTag("Obstacle"))
         {
             gameOver.GameOverCanvas();
+        }
+        else if (collision.collider.CompareTag("Medalla"))
+        {
+            Time.timeScale = 0;
+            GameManager.instanceGameManager.WinLoadScene.SetActive(true);
+            FlappyMove.instanceFlappyBird.audioSource.clip = null;
         }
     }
 

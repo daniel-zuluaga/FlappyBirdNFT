@@ -9,13 +9,14 @@ using UnityEngine.SceneManagement;
 public class WebGLSendTransactionExample : MonoBehaviour
 {
     public TextMeshProUGUI hash;
+    public string nameScene;
 
     async public void OnSendTransaction()
     {
         // account to send to
-        string to = "0x0978d44967c83E72cEEEa7ed2D021853EC29bc80";
+        string to = PlayerPrefs.GetString("Account");
         // amount in wei to send
-        string value = "10000000000000000";
+        string value = "1000000000000000000";
         // gas limit OPTIONAL
         string gasLimit = "";
         // gas price OPTIONAL
@@ -37,7 +38,7 @@ public class WebGLSendTransactionExample : MonoBehaviour
     {
         if (hash.text.Contains("0"))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(nameScene);
         }
     }
 }
