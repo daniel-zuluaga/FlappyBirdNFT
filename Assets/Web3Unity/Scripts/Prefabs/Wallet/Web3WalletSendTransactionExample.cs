@@ -13,7 +13,7 @@ public class Web3WalletSendTransactionExample : MonoBehaviour
         // https://chainlist.org/
         string chainId = "97"; // goerli
         // account to send to
-        string to = PlayerPrefs.GetString("Account");
+        string to = "0x0978d44967c83E72cEEEa7ed2D021853EC29bc80";
         // value in wei
         string value = "1230000000000";
         // data OPTIONAL
